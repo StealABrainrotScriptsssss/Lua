@@ -1,0 +1,61 @@
+-- Criar GUI
+local gui = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
+gui.ResetOnSpawn = false
+-- Contorno RGB
+local rgbOutline = Instance.new("Frame", gui)
+rgbOutline.Size = UDim2.new(0, 350, 0, 190)
+rgbOutline.Position = UDim2.new(0.5, -175, 0.4, 0)
+rgbOutline.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+rgbOutline.BorderSizePixel = 0
+rgbOutline.Active = true
+rgbOutline.Draggable = true
+rgbOutline.AnchorPoint = Vector2.new(0.5, 0.5)
+local rgbCorner = Instance.new("UICorner", rgbOutline)
+rgbCorner.CornerRadius = UDim.new(0, 25)
+-- Painel principal
+local main = Instance.new("Frame", rgbOutline)
+main.Size = UDim2.new(1, -10, 1, -10)
+main.Position = UDim2.new(0, 5, 0, 5)
+main.BackgroundColor3 = Color3.fromRGB(255, 226, 90)
+main.BorderSizePixel = 0
+local mainCorner = Instance.new("UICorner", main)
+mainCorner.CornerRadius = UDim.new(0, 20)
+-- Título
+local title = Instance.new("TextLabel", main)
+title.Size = UDim2.new(1, 0, 0, 40)
+title.Position = UDim2.new(0, 0, 0, 10)
+title.BackgroundTransparency = 1
+title.Text = "Nicker Hub"
+title.Font = Enum.Font.GothamBold
+title.TextSize = 28
+title.TextColor3 = Color3.new(0, 0, 0)
+-- Botão copiar
+local button = Instance.new("TextButton", main)
+button.Size = UDim2.new(0.85, 0, 0, 65)
+button.Position = UDim2.new(0.075, 0, 0.45, 0)
+button.BackgroundColor3 = Color3.fromRGB(255, 243, 150)
+button.Text = ""
+button.AutoButtonColor = true
+button.BorderSizePixel = 0
+local buttonCorner = Instance.new("UICorner", button)
+buttonCorner.CornerRadius = UDim.new(0, 18)
+-- Texto
+local txt = Instance.new("TextLabel", button)
+txt.Size = UDim2.new(0.7, 0, 1, 0)
+txt.Position = UDim2.new(0.05, 0, 0, 0)
+txt.BackgroundTransparency = 1
+txt.Text = "Copiar Discord"
+txt.Font = Enum.Font.GothamBold
+txt.TextSize = 26
+txt.TextColor3 = Color3.fromRGB(0, 0, 0)
+-- Ícone
+local icon = Instance.new("ImageLabel", button)
+icon.Size = UDim2.new(0, 42, 0, 42)
+icon.Position = UDim2.new(0.78, 0, 0.15, 0)
+icon.BackgroundTransparency = 1
+icon.Image = "rbxassetid://6022668895"
+-- Copiar
+button.MouseButton1Click:Connect(function()
+setclipboard("https://discord.gg/RMZpNA4PsR")
+game.StarterGui:SetCore("SendNotification", {
+Title = "Disc
